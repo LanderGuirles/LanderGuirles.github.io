@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lander Guirles Palacios</title><meta name="description" content="Lander Guirles Palacios · Estudiante de Ingeniería Informática (Universidad de Deusto) orientado a desarrollo backend con Java, Spring Boot y Python."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"><style>
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#07130d);
+--ink:light-dark(#0b0b10,#e9f3ee);
+--soft:light-dark(#4a4d55,#a9bab1);
+--rule:light-dark(#e2e5e8,#1d3328);
+--mist:light-dark(#eafaf2,#0c2117);
+--green:light-dark(#00a862,#2fd08a);
+--gdeep:light-dark(#007a47,#2fd08a);
+--band:light-dark(#00a862,#0f6b43);
+--bandink:#ffffff;
+--card:light-dark(#ffffff,#0a1a12)}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Space Grotesk",Inter,system-ui,sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
+h2{font-size:clamp(28px,3.4vw,40px)}
+h3{font-size:20px;line-height:1.25}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(40px,5vw,80px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.lead{font-size:17px;color:var(--soft);max-width:62ch}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:24px 48px;align-items:end;margin-bottom:36px}
+.sec-head p{color:var(--soft)}
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+nav .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding:12px max(5vw,16px)}
+nav .mono{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:18px;text-decoration:none;display:flex;align-items:center;gap:10px}
+nav .mono i{width:30px;height:30px;border-radius:7px;background:var(--green);color:#fff;font-style:normal;display:grid;place-items:center;font-size:14px}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 18px;font-size:15px}
+nav ul a{text-decoration:none;color:var(--soft);padding:6px 0;display:inline-block}
+nav ul a:hover,nav ul a:focus-visible{color:var(--ink)}
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,5.6vw,68px)}
+.role{font-size:clamp(18px,1.8vw,21px);color:var(--soft);margin:18px 0 26px;max-width:34ch}
+.role b{color:var(--ink);font-weight:600}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--rule);margin-bottom:28px}
+.facts div{padding:12px 16px 12px 0;border-bottom:1px solid var(--rule)}
+.facts dt{font-size:13px;color:var(--soft)}
+.facts dd{margin:0;font-weight:500}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:8px;border:1px solid var(--rule);text-decoration:none;font-weight:500;font-size:15px;background:var(--card)}
+.btn:hover{border-color:var(--green)}
+.btn.primary{background:var(--green);border-color:var(--green);color:#fff}
+.btn.primary:hover{background:var(--gdeep)}
+.btn svg{width:18px;height:18px;flex:none}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+/* stack picture */
+.stack{display:grid;gap:10px;padding:26px;border-radius:16px;background:var(--mist);position:relative}
+.stack .cap{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--soft);margin-bottom:4px}
+.layer{display:grid;grid-template-columns:7.5em minmax(0,1fr);align-items:center;gap:14px;padding:14px 16px;border-radius:10px;background:var(--card);border:1px solid var(--rule);box-shadow:0 1px 0 var(--rule),0 6px 0 -2px color-mix(in srgb,var(--green) calc(var(--d)*1%),var(--rule));transform:translateX(calc(var(--i)*5px));transition:transform .5s ease}
+.layer .ln{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:15px}
+.layer .ln small{display:block;font-family:Inter,sans-serif;font-weight:400;font-size:13px;color:var(--soft)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;padding:3px 10px;border-radius:999px;background:var(--mist);border:1px solid color-mix(in srgb,var(--green) 30%,transparent);white-space:nowrap}
+.layer.core{border-color:var(--green)}
+.layer.core .chip{background:var(--green);color:#fff;border-color:var(--green)}
+.stack .flow{position:absolute;left:12px;top:56px;bottom:26px;width:2px;background:linear-gradient(var(--green),color-mix(in srgb,var(--green) 20%,transparent))}
+/* perfil band */
+.profile{background:var(--band);color:var(--bandink)}
+.profile .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:24px 56px;align-items:start}
+.profile p{font-size:clamp(18px,1.7vw,21px);line-height:1.55}
+.profile .nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.profile .nums b{display:block;font-family:"Space Grotesk",sans-serif;font-size:clamp(34px,4vw,48px);line-height:1}
+.profile .nums span{font-size:14px;opacity:.9}
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.proj{border:1px solid var(--rule);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:14px;background:var(--card)}
+.proj:hover{border-color:color-mix(in srgb,var(--green) 60%,var(--rule))}
+.proj .kind{font-size:13px;color:var(--gdeep);font-weight:600}
+.proj ul{margin:0;padding-left:18px;color:var(--soft)}
+.proj li+li{margin-top:6px}
+.proj .foot{margin-top:auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;border-top:1px solid var(--rule)}
+.proj .foot a{font-size:14px;font-weight:500;text-decoration:none;color:var(--gdeep);display:inline-flex;align-items:center;gap:6px;min-height:44px}
+.proj .foot a:hover{text-decoration:underline}
+/* timeline */
+.tl{border:1px solid var(--rule);border-radius:14px;padding:22px 24px;background:var(--card)}
+.axis,.trow{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr);gap:20px;align-items:center}
+.axis .yrs{position:relative;height:22px;font-size:13px;color:var(--soft)}
+.axis .yrs span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+.trow{padding:12px 0;border-top:1px solid var(--rule)}
+.trow .who b{display:block;font-weight:600;line-height:1.3}
+.trow .who span{font-size:13px;color:var(--soft)}
+.track{position:relative;height:26px;background:repeating-linear-gradient(90deg,var(--rule) 0 1px,transparent 1px calc(100%/6))}
+.bar{position:absolute;top:4px;height:18px;border-radius:5px;background:color-mix(in srgb,var(--green) 35%,transparent)}
+.bar.edu{background:var(--ink);opacity:.8}
+.bar.now{background:var(--green)}
+.bar.now::after{content:"";position:absolute;right:-1px;top:-4px;bottom:-4px;width:2px;background:var(--green)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:13px;color:var(--soft);margin-top:14px}
+.legend i{display:inline-block;width:14px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle}
+.xp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px}
+.xp article{border-top:3px solid var(--green);padding-top:16px}
+.xp .when{font-size:14px;color:var(--soft);margin:4px 0 10px;white-space:nowrap}
+.xp p,.xp li{color:var(--soft)}
+.xp ul{margin:0;padding-left:18px}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.skill{background:var(--mist);border-radius:14px;padding:24px}
+.skill h3{margin-bottom:14px}
+.skill .chip{font-size:14px;padding:5px 12px;background:var(--card)}
+.edlang{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:20px}
+.panel{border:1px solid var(--rule);border-radius:14px;padding:24px;background:var(--card)}
+.panel h3{margin-bottom:16px}
+.ed{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:12px 0;border-top:1px solid var(--rule)}
+.ed b{font-weight:600}
+.ed span{color:var(--soft);font-size:15px}
+.ed time{font-size:14px;color:var(--soft);white-space:nowrap;text-align:right}
+.lang{display:grid;grid-template-columns:6.5em minmax(0,1fr) 4.2em;gap:14px;align-items:center;padding:10px 0;border-top:1px solid var(--rule)}
+.lang b{font-weight:600}
+.cefr{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px}
+.cefr i{height:12px;border-radius:2px;background:var(--rule)}
+.cefr i.on{background:var(--green)}
+.lang em{font-style:normal;font-size:14px;color:var(--soft);text-align:right;white-space:nowrap}
+.scale{font-size:13px;color:var(--soft);margin-top:10px}
+/* contact */
+.contact{background:var(--ink);color:var(--bg)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px 56px;align-items:center}
+.contact p{opacity:.8;margin-top:14px;font-size:17px}
+.clist{display:grid;gap:0}
+.clist a,.clist div{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1px solid color-mix(in srgb,var(--bg) 20%,transparent);text-decoration:none;min-height:44px;align-items:center}
+.clist span{opacity:.7;font-size:14px}
+.clist strong{font-weight:500;overflow-wrap:anywhere}
+.clist a:hover strong{color:var(--green)}
+footer{padding:22px max(5vw,16px);font-size:13px;color:var(--soft);border-top:1px solid var(--rule)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+@media(max-width:900px){
+.hero .wrap,.profile .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}
+.sec-head{grid-template-columns:minmax(0,1fr)}
+.xp,.skills{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.xp article:last-child,.skills .skill:last-child{grid-column:1/-1}
+.hero .stack{order:2}}
+@media(max-width:640px){
+nav ul{font-size:14px;gap:2px 14px}
+.projects,.xp,.skills,.edlang{grid-template-columns:minmax(0,1fr)}
+.layer{grid-template-columns:minmax(0,1fr);gap:8px;transform:none}
+.stack{padding:18px}.stack .flow{display:none}
+.axis,.trow{grid-template-columns:minmax(0,1fr);gap:6px}
+.axis .lbl{display:none}
+.proj{padding:20px}
+.profile .nums{gap:10px}
+.lang{grid-template-columns:5.5em minmax(0,1fr) 3.8em;gap:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.layer{transition:none}}
+</style></head><body><nav aria-label="Principal"><div class="wrap"><a class="mono" href="#inicio"><i>LG</i>Lander Guirles</a><ul><li><a href="#perfil">Perfil</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#trayectoria">Trayectoria</a></li><li><a href="#habilidades">Habilidades</a></li><li><a href="#contacto">Contacto</a></li></ul></div></nav><header class="band hero" id="inicio"><div class="wrap"><div><h1>Lander Guirles Palacios</h1><p class="role">Estudiante de <b>Ingeniería Informática</b> en la Universidad de Deusto, orientado al <b>desarrollo de software backend</b> con Java, Spring Boot y Python.</p><dl class="facts"><div><dt>Ubicación</dt><dd>Bilbao</dd></div><div><dt>Curso</dt><dd>4º de Ingeniería Informática</dd></div><div><dt>Busco</dt><dd>Prácticas en desarrollo</dd></div><div><dt>Idiomas</dt><dd>Español, inglés, euskera</dd></div></dl><div class="btns"><a class="btn primary" href="mailto:l.guirles.palacios@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>Contactar</a><a class="btn" href="https://github.com/LanderGuirles" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7 3.6 3.6 0 0 1 .1-2.7s.8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"></path></svg>GitHub</a><a class="btn" href="https://www.linkedin.com/in/lander-guirles-palacios/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3V9.5Zm7 0h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4V9.5Z"></path></svg>LinkedIn</a><a class="btn" href="Lander_Guirles_Palacios_-_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"></path></svg>CV en PDF</a></div></div><figure class="stack" aria-label="Tecnologías con las que trabajo, organizadas por capas de una aplicación" style="margin:0"><div class="cap"><span>Mi stack, capa a capa</span><span>Núcleo resaltado</span></div><div class="flow" aria-hidden="true"></div><div id="layers"><div class="layer" style="--i:0;--d:25;margin-bottom:10px"><div class="ln">Interfaz<small>lo que ve el usuario</small></div><div class="chips"><span class="chip">HTML/CSS</span><span class="chip">Panel web</span><span class="chip">Navegador</span></div></div><div class="layer core" style="--i:1;--d:70;margin-bottom:10px"><div class="ln">API<small>contratos y endpoints</small></div><div class="chips"><span class="chip">API REST</span><span class="chip">Spring Boot</span><span class="chip">Flask</span><span class="chip">Django</span></div></div><div class="layer core" style="--i:2;--d:70;margin-bottom:10px"><div class="ln">Lógica<small>reglas de negocio</small></div><div class="chips"><span class="chip">Java</span><span class="chip">Python</span><span class="chip">C/C++</span><span class="chip">Arquitectura por capas</span></div></div><div class="layer" style="--i:3;--d:25;margin-bottom:10px"><div class="ln">Datos<small>modelo y persistencia</small></div><div class="chips"><span class="chip">MySQL</span><span class="chip">SQL</span><span class="chip">ORM de Django</span></div></div><div class="layer" style="--i:4;--d:25;margin-bottom:0px"><div class="ln">Hardware<small>mundo físico</small></div><div class="chips"><span class="chip">Raspberry Pi</span><span class="chip">GPIO</span><span class="chip">Linux</span></div></div></div></figure></div></header><section class="band profile" id="perfil"><div class="wrap"><h2>Perfil</h2><div><p>Estudiante de cuarto curso de Ingeniería Informática en la Universidad de Deusto, enfocado en desarrollo de software y bases de datos. He construido aplicaciones con Java y Spring Boot, con Python y Django, y un sistema IoT con Flask y Raspberry Pi. Hablo euskera, castellano e inglés y tengo experiencia dirigiendo grupos. Busco unas prácticas con proyectos reales donde seguir aprendiendo.</p><div class="nums"><div><b>4</b><span>proyectos destacados</span></div><div><b>3</b><span>idiomas</span></div><div><b>3</b><span>temporadas liderando grupos</span></div></div></div></div></section><section class="band" id="proyectos"><div class="wrap"><div class="sec-head"><h2>Proyectos destacados</h2><p class="lead">Aplicaciones backend, modelado de datos e integración con hardware. Cada proyecto enlaza a su repositorio en GitHub.</p></div><div class="projects" id="projects"><article class="proj"><div class="kind">Proyecto en equipo · participé en todas las partes</div><h3>Gestión de plantas de reciclaje</h3><ul><li>Aplicación de gestión de activos con arquitectura por capas, pensada para ser escalable, mantenible y fácil de ampliar.</li><li>Lógica de negocio expuesta mediante una API REST con Spring Boot.</li></ul><div class="foot"><span class="chips"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">API REST</span></span><a href="https://github.com/MartXXeL/EcoembesSD" target="_blank" rel="noopener">Ver repositorio <span aria-hidden="true">→</span></a></div></article><article class="proj"><div class="kind">Proyecto en equipo · participé en todas las partes</div><h3>Sistema de control de acceso IoT</h3><ul><li>Interfaz bidireccional con Flask para intercambiar datos en tiempo real entre una Raspberry Pi y un panel web remoto.</li><li>Permite monitorizar y controlar hardware físico desde el navegador.</li></ul><div class="foot"><span class="chips"><span class="chip">Flask</span><span class="chip">Raspberry Pi</span><span class="chip">GPIO</span></span><a href="https://github.com/markelbugallo/rpi-access-control" target="_blank" rel="noopener">Ver repositorio <span aria-hidden="true">→</span></a></div></article><article class="proj"><h3>Gestor de concesionarios</h3><ul><li>Modelo de datos relacional con el ORM de Django para gestionar marcas, modelos y puntos de venta.</li><li>Integridad referencial y consultas eficientes.</li></ul><div class="foot"><span class="chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">SQL</span></span><a href="https://github.com/LanderGuirles/Concesionario" target="_blank" rel="noopener">Ver repositorio <span aria-hidden="true">→</span></a></div></article><article class="proj"><div class="kind">Proyecto en equipo · participé en todas las partes</div><h3>Plataforma de entretenimiento digital</h3><ul><li>Plataforma tipo Netflix con autenticación de usuarios, sistema de ranking y alquiler de contenido.</li><li>Esquema relacional en MySQL para asegurar la integridad de los datos y una navegación fluida entre categorías.</li></ul><div class="foot"><span class="chips"><span class="chip">Java</span><span class="chip">MySQL</span></span><a href="https://github.com/Boorjahdezz/DeustoFlix" target="_blank" rel="noopener">Ver repositorio <span aria-hidden="true">→</span></a></div></article></div></div></section><section class="band" id="trayectoria" style="padding-top:0"><div class="wrap"><div class="sec-head"><h2>Formación y experiencia</h2><p class="lead">Cronología a escala real, de 2021 a hoy: estudios y experiencia en paralelo.</p></div><div class="tl"><div class="axis"><span class="lbl"></span><div class="yrs" id="yrs"><span style="left:0.00%">2021</span><span style="left:16.67%">2022</span><span style="left:33.33%">2023</span><span style="left:50.00%">2024</span><span style="left:66.67%">2025</span><span style="left:83.33%">2026</span><span style="left:100.00%">2027</span></div></div><div id="rows"><div class="trow"><div class="who"><b>Bachillerato</b><span>Urretxindorra Ikastola</span></div><div class="track"><div class="bar edu" style="left:11.67%;width:30.00%" title="Bachillerato"></div></div></div><div class="trow"><div class="who"><b>Grado en Ingeniería Informática</b><span>Universidad de Deusto</span></div><div class="track"><div class="bar edu now" style="left:45.00%;width:53.33%" title="Grado en Ingeniería Informática"></div></div></div><div class="trow"><div class="who"><b>Voluntariado en Irlanda</b><span>Joe's Garden Centre</span></div><div class="track"><div class="bar " style="left:41.67%;width:16.66%" title="Voluntariado en Irlanda"></div></div></div><div class="trow"><div class="who"><b>Monitor de campus</b><span>Betolatza, La Roseta</span></div><div class="track"><div class="bar " style="left:41.67%;width:50.00%" title="Monitor de campus"></div></div></div><div class="trow"><div class="who"><b>Entrenador de fútbol infantil</b><span>Temporada 2024 – 2025</span></div><div class="track"><div class="bar " style="left:61.67%;width:13.33%" title="Entrenador de fútbol infantil"></div></div></div><div class="trow"><div class="who"><b>Profesor particular</b><span>Clases de refuerzo</span></div><div class="track"><div class="bar now" style="left:66.67%;width:31.66%" title="Profesor particular"></div></div></div></div><div class="legend"><span><i style="background:var(--ink);opacity:.8"></i>Formación</span><span><i style="background:color-mix(in srgb,var(--green) 35%,transparent)"></i>Experiencia</span><span><i style="background:var(--green)"></i>En curso</span></div></div><div class="xp"><article><h3>Profesor particular</h3><div class="when">2025 – 2026</div><p>Refuerzo académico personalizado y planificación de clases según las necesidades de cada alumno.</p></article><article><h3>Monitor de campus y entrenador de fútbol infantil</h3><div class="when">Betolatza, La Roseta (Bilbao) · 2023 – 2026</div><ul><li>Responsable de grupos de niños durante tres temporadas de campus, con organización de actividades deportivas y fomento del trabajo en equipo.</li><li>Entrenador de un equipo infantil en la temporada 2024 – 2025: gestión de grupo, resolución de conflictos y fomento del compromiso y la disciplina.</li></ul></article><article><h3>Voluntariado en Irlanda</h3><div class="when">Joe's Garden Centre, Tipperary · 2023 – 2024</div><p>Adaptación a un entorno internacional y resolución de problemas en inglés.</p></article></div></div></section><section class="band" id="habilidades" style="padding-top:0"><div class="wrap"><div class="sec-head"><h2>Habilidades</h2><p class="lead">Lenguajes, frameworks y herramientas que he usado en proyectos.</p></div><div class="skills"><div class="skill"><h3>Lenguajes</h3><div class="chips"><span class="chip">Java</span><span class="chip">Python</span><span class="chip">C/C++</span><span class="chip">SQL</span><span class="chip">HTML/CSS</span></div></div><div class="skill"><h3>Backend y datos</h3><div class="chips"><span class="chip">Spring Boot</span><span class="chip">Django</span><span class="chip">Flask</span><span class="chip">API REST</span><span class="chip">MySQL</span></div></div><div class="skill"><h3>Herramientas</h3><div class="chips"><span class="chip">Git</span><span class="chip">Linux (terminal)</span><span class="chip">Raspberry Pi y GPIO</span></div></div></div><div class="edlang"><div class="panel"><h3>Educación</h3><div class="ed"><b>Grado en Ingeniería Informática</b><time>2023 – actualidad</time><span>Universidad de Deusto, Bilbao · 4º curso</span></div><div class="ed"><b>Bachillerato</b><time>2021 – 2023</time><span>Urretxindorra Ikastola</span></div></div><div class="panel"><h3>Idiomas</h3><div id="langs"><div class="lang"><b>Español</b><div class="cefr" aria-label="Nativo"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><em>Nativo</em></div><div class="lang"><b>Inglés</b><div class="cefr" aria-label="B2"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></div><em>B2</em></div><div class="lang"><b>Euskera</b><div class="cefr" aria-label="B2"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></div><em>B2</em></div></div><p class="scale">Escala del Marco Común Europeo: A1 a C2.</p></div></div></div></section><section class="band contact" id="contacto"><div class="wrap"><div><h2>Hablemos</h2><p>Disponible para prácticas en desarrollo de software. Respondo rápido por correo.</p></div><div class="clist"><a href="mailto:l.guirles.palacios@gmail.com"><span>Correo</span><strong>l.guirles.palacios@gmail.com</strong></a><a href="https://github.com/LanderGuirles" target="_blank" rel="noopener"><span>GitHub</span><strong>github.com/LanderGuirles</strong></a><a href="https://www.linkedin.com/in/lander-guirles-palacios/" target="_blank" rel="noopener"><span>LinkedIn</span><strong>linkedin.com/in/lander-guirles-palacios</strong></a><div><span>Ubicación</span><strong>Bilbao</strong></div></div></div></section><footer><div class="wrap"><span>© 2026 Lander Guirles Palacios</span><span>Bilbao</span></div></footer></body></html>
